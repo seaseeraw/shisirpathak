@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero"; // Import Hero component
-
+// import "./App.css";
 const Home = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
