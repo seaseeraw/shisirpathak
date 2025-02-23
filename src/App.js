@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+// src/App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // React Router
+import Header from "./components/Header"; // Correct default import
+import Footer from "./components/Footer"; // Correct default import
+import Home from "./pages/Home"; // Correct default import
+import NotFound from "./pages/NotFound"; // Correct default import
 
 function App() {
   return (
@@ -12,9 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
@@ -22,3 +20,4 @@ function App() {
 }
 
 export default App;
+

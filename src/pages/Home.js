@@ -1,13 +1,26 @@
-import { Container, Button } from "react-bootstrap";
+// src/pages/Home.js
+import React, { useEffect, useState } from "react";
+import Hero from "../components/Hero"; // Import Hero component
 
 const Home = () => {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    setFadeIn(true);
+  }, []);
+
   return (
-    <Container className="text-center my-5">
-      <h1>Welcome to My Portfolio</h1>
-      <p>I'm a Full-Stack Developer with expertise in MERN stack.</p>
-      <Button variant="primary" href="/projects">View My Work</Button>
-    </Container>
+    <div className={`home-container ${fadeIn ? "fade-in" : ""}`}>
+      <Hero />
+      <div id="projects" className="container mt-5">
+        <h2>Projects</h2>
+        <p>Check out some of my recent work below!</p>
+      </div>
+    </div>
   );
 };
 
 export default Home;
+
+
+

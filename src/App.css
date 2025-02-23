@@ -1,38 +1,172 @@
-.App {
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #343a40;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(45deg, #6c63ff, #3faffa);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Header Styling */
+header {
+  background-color: #343a40;
+  padding: 10px 0;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+  background-color: #6c63ff;
+  border-radius: 5px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer p {
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+footer a {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Projects Section */
+#projects {
+  background-color: #ffffff;
+  padding: 50px 20px;
+}
+
+#projects h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* NotFound Styling */
+.not-found {
+  text-align: center;
+  padding: 100px;
+  font-size: 2rem;
+  color: #ff4d4d;
+}
+
+/* Fade In Animation */
+.home-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.home-container.fade-in {
+  opacity: 1;
+}
+
+/* Button Hover Effect */
+button:hover, .btn:hover {
+  transform: scale(1.1);
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+
+/* Link Hover Effect */
+a:hover {
+  text-decoration: underline;
+  color: #6c63ff;
+  transition: color 0.3s ease;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  header nav ul {
+    flex-direction: column;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  .hero .btn {
+    padding: 10px 20px;
   }
 }

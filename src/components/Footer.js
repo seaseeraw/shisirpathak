@@ -1,26 +1,16 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+// src/components/Footer.js
+import React from "react";
 
-const Hero = () => {
+const Footer = () => {
   return (
-    <div className="hero-section text-center text-white d-flex align-items-center">
-      <Container>
-        <Row className="justify-content-center">
-          <Col md={8}>
-            <h1 className="hero-title">Hi, I'm a MERN Stack Developer</h1>
-            <p className="hero-subtitle">
-              Passionate about building interactive, user-friendly, and scalable web applications.
-            </p>
-            <Button variant="primary" href="/projects" className="me-2">
-              View My Work
-            </Button>
-            <Button variant="outline-light" href="/contact">
-              Hire Me
-            </Button>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <footer>
+      <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+      <p>
+        <a href="https://github.com/seaseeraw" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/shishir-pathak/" target="_blank" rel="noopener noreferrer"> LinkedIn</a>
+      </p>
+    </footer>
   );
 };
 
-export default Hero;
+export default Footer;
