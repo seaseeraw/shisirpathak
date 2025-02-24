@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Skills from "./pages/Skills";
 import "./App.css";
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
             <Link to="/about">About</Link>
             <Link to="/projects">Projects</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/skills" >Skills</Link>
             <button className="theme-toggle" onClick={toggleTheme}>
               {isDarkMode ? "🌙 Dark Mode" : "☀️ Light Mode"}
             </button>
@@ -42,6 +44,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/skills" element={<Skills />} />
         </Routes>
 
         <Footer />
