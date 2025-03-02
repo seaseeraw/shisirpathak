@@ -1,19 +1,121 @@
 
-import React from "react";
-import "../App.css";
 
-const Contact = () => {
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import "../App.css";
+// const ContactForm = () => {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     message: ''
+//   });
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       const response = await axios.post('http://localhost:5000/api/contact/submit', formData);
+//       console.log(response.data);
+//       alert(response.data.message);
+//     } catch (error) {
+//       console.error('Error submitting form:', error);
+//       alert('Failed to send message.');
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         type="text"
+//         placeholder="Your Name"
+//         value={formData.name}
+//         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+//       />
+//       <input
+//         type="email"
+//         placeholder="Your Email"
+//         value={formData.email}
+//         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+//       />
+//       <textarea
+//         placeholder="Your Message"
+//         value={formData.message}
+//         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+//       />
+//       <button type="submit">Send Message</button>
+//     </form>
+//   );
+// };
+
+// export default ContactForm;
+
+
+import React, { useState } from "react";
+import axios from "axios";
+import "../App.css"; // Keep your styling
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      await axios.post("http://localhost:5000/api/contact/submit", formData);
+
+      setSuccess("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" }); // Clear form after submission
+    } catch (error) {
+      setError("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="fancy-page">
-      <h2 className="fancy-heading">Contact Me</h2>
-      <form className="fancy-form">
-        <input type="text" placeholder="Your Name" className="fancy-input" />
-        <input type="email" placeholder="Your Email" className="fancy-input" />
-        <textarea placeholder="Your Message" className="fancy-input"></textarea>
-        <button type="submit" className="fancy-button">Send Message</button>
+    <div className="contact-container">
+      <h2>Contact Me</h2>
+      {error && <p className="error-msg">{error}</p>}
+      {success && <p className="success-msg">{success}</p>}
+      
+      <form onSubmit={handleSubmit} className="contact-form">
+        <input
+          type="text"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          required
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          required
+        />
+        <textarea
+          placeholder="Your Message"
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          required
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </form>
     </div>
   );
 };
 
-export default Contact;
+export default ContactForm;
