@@ -494,51 +494,71 @@ body {
 
 
 
-/* 🌿 About Page Layout */
+/* 🌟 About Page Styling */
 .about-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+/* Flexbox Layout */
+.about-content {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Left Side - Image */
+.about-image {
+  flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 40px;
-  background-color: #f8f9fa;
+  padding: 20px;
 }
 
-/* Heading Style */
-.about-title {
-  font-size: 2.5rem;
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-  letter-spacing: 1px;
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
 }
 
-/* Text Style */
+/* Right Side - Text */
 .about-text {
-  font-size: 1.2rem;
+  flex: 2;
+  padding: 30px;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1rem;
   color: #555;
-  text-align: center;
   line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 10px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* 🌟 Responsive Design */
 @media (max-width: 768px) {
-  .about-container {
-    padding: 20px;
-  }
-
-  .about-title {
-    font-size: 2rem;
+  .about-content {
+    flex-direction: column;
+    text-align: center;
   }
 
   .about-text {
-    font-size: 1rem;
+    padding: 20px;
   }
 }
 
