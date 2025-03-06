@@ -493,9 +493,50 @@ body {
 }
 
 
+/* About Page Styles */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 50px;
+  background: linear-gradient(to right, #f8f9fa, #e3e6e8);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 
 /* 🌟 About Page Styling */
-.about-container {
+/* .about-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -561,7 +602,7 @@ body {
     padding: 20px;
   }
 }
-
+ */
 
 
 /* 🌿 Footer Styles */
