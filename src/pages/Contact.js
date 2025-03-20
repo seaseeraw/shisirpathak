@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../App.css"; // Keep your styling
+import "../App.css"; 
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ const ContactForm = () => {
       await axios.post("http://localhost:5000/api/contact/submit", formData);
 
       setSuccess("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" }); // Clear form after submission
+      setFormData({ name: "", email: "", message: "" }); 
     } catch (error) {
       setError("Failed to send message. Please try again.");
     } finally {
